@@ -1,4 +1,14 @@
 #!/bin/bash
+# check authority
+user=`whoami`
+if [[ "$user" != "root" ]]
+then
+#    echo "$user"
+    echo 'Please run with sudo.'
+    exit 0
+fi
+
+# deploy
 script_path=/usr/bin
 
 chmod +x switch-proxy.sh
