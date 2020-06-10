@@ -8,7 +8,7 @@ else
 	if [ -z $proxyed ]
 	then
 		export all_proxy="http://localhost:8118"
-		echo $proxyed
+		echo $all_proxy
 		echo "proxy on"
 	else
 		unset all_proxy
