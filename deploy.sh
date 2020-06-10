@@ -37,3 +37,17 @@ then
     rm $file_path
 fi
 ln -s `pwd`/condaenv.sh $file_path
+
+chmod +x sshs.sh
+file_path=$script_path/sshs
+read -p "Please input host local('q' to cancel):" host
+if [[ "$host" != "q" ]]
+then
+    if [ -f $file_path ]
+    then
+        echo "$file_path exist. delete."
+        rm $file_path
+    fi
+    sed "s/HOST/$host/g" sshs.sh >$file_path
+    chmod +x $file_path
+fi
